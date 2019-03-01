@@ -1,3 +1,5 @@
+require 'pry'
+
 def roll_call_dwarves(names)
   newarray= []
   names.each_with_index do |name, index|
@@ -19,14 +21,15 @@ def long_planeteer_calls(names)
 end
 
 
+
 def find_the_cheese(names)
+  string = ""
   cheese_types = ["cheddar", "gouda", "camembert"]
-  cheese_types.collect do |n|
-    result = names.include? n
-    if result == true
-    n
-    elsif result == false
-    print "nil"
+    names.each_with_index do |n, index|
+      if names[index] == "cheddar" || names[index] == "gouda" || names[index] == "camembert"
+       string += "#{names[index]}"
+       return string
+       end
     end
+    nil
   end
-end
