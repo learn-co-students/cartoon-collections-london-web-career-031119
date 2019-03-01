@@ -18,7 +18,15 @@ def long_planeteer_calls(names)
   end
 end
 
+
 def find_the_cheese(names)
   cheese_types = ["cheddar", "gouda", "camembert"]
-  names.include(cheese_types)
+  cheese_types.collect do |n|
+    result = names.include? n
+    if result == true
+    n
+    elsif result == false
+    print "nil"
+    end
+  end
 end
